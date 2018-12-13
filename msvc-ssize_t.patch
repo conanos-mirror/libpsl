@@ -1,0 +1,14 @@
+diff -Nur libpsl/src/psl.c libpsl-ssize_t/src/psl.c
+--- libpsl/src/psl.c	2018-12-13 02:36:13.490519264 -0800
++++ libpsl-ssize_t/src/psl.c	2018-12-13 02:39:46.884310564 -0800
+@@ -100,6 +100,10 @@
+ 
+ #include <libpsl.h>
+ 
++#ifdef _WIN32
++typedef long ssize_t;
++#endif
++
+ /**
+  * SECTION:libpsl
+  * @short_description: Public Suffix List library functions
